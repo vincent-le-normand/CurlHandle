@@ -355,7 +355,7 @@ static int socket_callback(CURL *easy, curl_socket_t s, int what, void *userp, v
 
 - (CURLTransfer *)transferWithRequest:(NSURLRequest *)request credential:(NSURLCredential *)credential delegate:(id)delegate {
     [self throwIfInvalidated];
-    CURLTransfer *result = [[CURLTransfer alloc] initWithRequest:request credential:credential delegate:delegate delegateQueue:_delegateQueue stack:self];
+    CURLTransfer *result = [[[CURLTransfer alloc] initWithRequest:request credential:credential delegate:delegate delegateQueue:_delegateQueue stack:self] autorelease];
     return result;
 }
 

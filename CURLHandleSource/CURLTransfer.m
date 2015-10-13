@@ -614,7 +614,7 @@ static int curlKnownHostsFunction(CURL *easy,     /* easy handle */
             _state = state;
             
             NSAssert(_error == nil, @"Error shouldn't have been filled in yet");
-            _error = error;
+            _error = [error retain];
             
             switch (state) {
                 case CURLTransferStateSuspended:
