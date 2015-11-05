@@ -759,7 +759,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastTestingUpgradeCheck = 0600;
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Karelia Software";
 			};
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "CURLHandle" */;
@@ -1100,6 +1100,7 @@
 					"\"$(SRCROOT)/built\"",
 					"\"$(SRCROOT)/../SFTP\"",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.karelia.CURLHandle;
 				PRODUCT_NAME = CURLHandle;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
@@ -1121,6 +1122,7 @@
 					"\"$(SRCROOT)/built\"",
 					"\"$(SRCROOT)/../SFTP\"",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.karelia.CURLHandle;
 				PRODUCT_NAME = CURLHandle;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
@@ -1130,12 +1132,12 @@
 		1DEB91B208733DA50010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_TESTABILITY = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1159,7 +1161,6 @@
 		1DEB91B308733DA50010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1181,7 +1182,6 @@
 		223FD0A7160B523700BE1C80 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREFIX_HEADER = "Tests/CURLHandleTests-Prefix.pch";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
@@ -1192,6 +1192,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/built\"",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.karelia.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1199,7 +1200,6 @@
 		223FD0A8160B523700BE1C80 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREFIX_HEADER = "Tests/CURLHandleTests-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/built/include/curl-x86_64\"";
@@ -1209,6 +1209,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/built\"",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.karelia.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -1233,7 +1234,6 @@
 		22C9CFCA17035A0B004610FE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -1256,7 +1256,6 @@
 		22C9CFCB17035A0B004610FE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
