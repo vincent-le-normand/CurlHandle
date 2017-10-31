@@ -467,6 +467,7 @@
 				220C11A41716067E0086F199 /* Documentation */,
 				2298FF5D1716C6F30001EBC7 /* Scripts */,
 				034768DFFF38A50411DB9C8B /* Products */,
+				BF7DFCBB1FA8AC7100E2DD69 /* Recovered References */,
 			);
 			name = CURLHandle;
 			sourceTree = "<group>";
@@ -666,6 +667,14 @@
 				80080379166C5B40004D39F5 /* libcares.dylib */,
 			);
 			name = Libraries;
+			sourceTree = "<group>";
+		};
+		BF7DFCBB1FA8AC7100E2DD69 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				50ED7E2716EED8D000723020 /* CoreServices.framework */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1160,7 +1169,6 @@
 					_objc_readClassPair,
 				);
 				RUN_CLANG_STATIC_ANALYZER = YES;
-				SDKROOT = macosx10.9;
 				WARNING_CFLAGS = "-Wdocumentation";
 			};
 			name = Debug;
@@ -1188,7 +1196,6 @@
 					_objc_readClassPair,
 				);
 				RUN_CLANG_STATIC_ANALYZER = YES;
-				SDKROOT = macosx10.9;
 				WARNING_CFLAGS = "-Wdocumentation";
 			};
 			name = Release;
