@@ -47,7 +47,8 @@
 @interface CURLTransferStack : NSObject
 {
     NSOperationQueue    *_delegateQueue;
-    
+	dispatch_queue_t _stateQueue;
+
     CURLM *_multi;
     NSMutableArray* _transfers;
     NSUInteger      _state;

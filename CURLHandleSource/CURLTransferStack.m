@@ -99,10 +99,7 @@ static int timeout_callback(CURLM *multi, long timeout_ms, void *userp);
 static int socket_callback(CURL *easy, curl_socket_t s, int what, void *userp, void *socketp);
 
 
-@implementation CURLTransferStack {
-	dispatch_queue_t _stateQueue;
-}
-
+@implementation CURLTransferStack 
 #pragma mark - Synthesized Properties
 
 @synthesize sockets = _sockets;
