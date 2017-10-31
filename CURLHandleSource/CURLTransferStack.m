@@ -99,7 +99,9 @@ static int timeout_callback(CURLM *multi, long timeout_ms, void *userp);
 static int socket_callback(CURL *easy, curl_socket_t s, int what, void *userp, void *socketp);
 
 
-@implementation CURLTransferStack
+@implementation CURLTransferStack {
+	dispatch_queue_t _stateQueue;
+}
 
 #pragma mark - Synthesized Properties
 
@@ -127,6 +129,7 @@ static int socket_callback(CURL *easy, curl_socket_t s, int what, void *userp, v
 - (id)initWithDelegateQueue:(NSOperationQueue *)queue {
     if (self = [self init])
     {
+		_stateQueue = dispatch_queue_create("com.connection.CURLTransferStackState", 0);
         // Delegate queue
         if (!queue) {
             queue = [[[NSOperationQueue alloc] init] autorelease];
@@ -224,7 +227,11 @@ static int socket_callback(CURL *easy, curl_socket_t s, int what, void *userp, v
 #pragma mark State
 
 - (CURLTransferStackState)state {
-    return _state;
+	__block CURLTransferStackState state;
+	dispatch_sync(_stateQueue, ^{
+		state = _state;
+	});
+    return state;
 }
 
 /**
@@ -239,7 +246,9 @@ static int socket_callback(CURL *easy, curl_socket_t s, int what, void *userp, v
  
  @warning Access MUST be serialized by calling on our private queue
  */
-- (void)setState:(CURLTransferStackState)state {
+- (void)setState:(CURLTransferStackState)inState {
+	
+	__block CURLTransferStackState state = inState;
     
     NSAssert(state != CURLTransferStackStateInvalidated, @"Only the state machine itself should decide it's finished invalidating");
     
@@ -254,15 +263,18 @@ static int socket_callback(CURL *easy, curl_socket_t s, int what, void *userp, v
             [NSException raise:NSInvalidArgumentException format:@"State can't go backwards"];
         }
     }
-    if (state == _state) return;
-    
-    
-    // When invalidating, if already idle, we want to jump straight to being fully invalidated
-    if (state == CURLTransferStackStateInvalidating && _state == CURLTransferStackStateIdle) {
-        state = CURLTransferStackStateInvalidated;
-    }
-    
-    _state = state;
+	
+	dispatch_sync(_stateQueue, ^{
+		if (state == _state) return;
+		
+		
+		// When invalidating, if already idle, we want to jump straight to being fully invalidated
+		if (state == CURLTransferStackStateInvalidating && _state == CURLTransferStackStateIdle) {
+			state = CURLTransferStackStateInvalidated;
+		}
+		
+		_state = state;
+	});
     
     switch (state) {
         case CURLTransferStackStateIdle:
