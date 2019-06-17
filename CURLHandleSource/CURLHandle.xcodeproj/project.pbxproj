@@ -770,6 +770,44 @@
 				LastTestingUpgradeCheck = 0600;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Karelia Software";
+				TargetAttributes = {
+					223FD091160B523700BE1C80 = {
+						ProvisioningStyle = Manual;
+					};
+					227FCE591741462200C3029D = {
+						ProvisioningStyle = Manual;
+					};
+					22C9CFBE17035A0A004610FE = {
+						ProvisioningStyle = Manual;
+					};
+					8008030A16696287004D39F5 = {
+						ProvisioningStyle = Manual;
+					};
+					8008030E16696292004D39F5 = {
+						ProvisioningStyle = Manual;
+					};
+					8008031F166A9514004D39F5 = {
+						ProvisioningStyle = Manual;
+					};
+					80080323166A951E004D39F5 = {
+						ProvisioningStyle = Manual;
+					};
+					80080327166A952A004D39F5 = {
+						ProvisioningStyle = Manual;
+					};
+					8008032B166A9535004D39F5 = {
+						ProvisioningStyle = Manual;
+					};
+					809ADE7816029C38001D02E1 = {
+						ProvisioningStyle = Manual;
+					};
+					809AE1BF1602BEF1001D02E1 = {
+						ProvisioningStyle = Manual;
+					};
+					8DC2EF4F0486A6940098B216 = {
+						ProvisioningStyle = Manual;
+					};
+				};
 			};
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "CURLHandle" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1144,6 +1182,8 @@
 			buildSettings = {
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application: INTEGO (TCG22P5KE4)";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1178,6 +1218,8 @@
 			buildSettings = {
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application: INTEGO (TCG22P5KE4)";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
