@@ -5,6 +5,7 @@
 	path = c-ares
 	url = https://github.com/bagder/c-ares.git
 [submodule "SFTP"]
+	branch = noodlesoft
 	path = SFTP
 	url = git@github.com:Noodlesoft/libssh2_sftp-Cocoa-wrapper.git
 [submodule "CURLHandleSource/Tests/MockServer"]
