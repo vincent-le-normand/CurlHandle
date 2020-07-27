@@ -12,8 +12,8 @@ rm -f  "${OBJROOT}/libcurl.dylib"
 rm -Rf "${OBJROOT}/libcurl.dylib.dSYM"
 
 # Remove build dirs from previous run.
-rm -Rf "${OBJROOT}/curl-i386"
+rm -Rf "${OBJROOT}/curl-arm64"
 rm -Rf "${OBJROOT}/curl-x86_64"
 rm -Rf "${OBJROOT}/libssh2"
-rm -Rf "${OBJROOT}/c-ares-i386"
+rm -Rf "${OBJROOT}/c-ares-arm64"
 rm -Rf "${OBJROOT}/c-ares-x86_64"

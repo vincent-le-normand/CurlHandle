@@ -1,3 +1,5 @@
+#!/bin/sh
+
 build() {
 
 	echo "Building $2"

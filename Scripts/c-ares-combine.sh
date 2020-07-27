@@ -4,7 +4,7 @@ export PATH=${PATH}:/opt/local/bin:/usr/local/bin
 
 # Create final dylibs.
 cd "${OBJROOT}"
-lipo -create -arch i386 cares-i386/.libs/libcares-i386.dylib  -arch x86_64 cares-x86_64/.libs/libcares-x86_64.dylib  -output libcares.dylib
+lipo -create -arch arm64 cares-arm64/.libs/libcares-arm64.dylib  -arch x86_64 cares-x86_64/.libs/libcares-x86_64.dylib  -output libcares.dylib
 
 # Create dSYMs
 dsymutil libcares.dylib
@@ -14,11 +14,11 @@ strip -x libcares.dylib
 
 # Final output to project dir, not build dir.
 OUTDIR="${SRCROOT}/built"
-mkdir -p "${OUTDIR}/include/cares-i386"
+mkdir -p "${OUTDIR}/include/cares-arm64"
 mkdir -p "${OUTDIR}/include/cares-x86_64"
 cp -f  libcares.dylib      "${OUTDIR}"
 cp -Rf libcares.dylib.dSYM "${OUTDIR}"
-cp -f cares-i386/ares_build.h "${OUTDIR}/include/cares-i386"
+cp -f cares-arm64/ares_build.h "${OUTDIR}/include/cares-arm64"
 cp -f cares-x86_64/ares_build.h "${OUTDIR}/include/cares-x86_64"
 
 # Display results.

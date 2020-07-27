@@ -1,5 +1,8 @@
-# First parameter should be "i386" or "x86_64"
+# First parameter should be "arm" or "x86_64"
 MODE=$1
+
+# Second parameter should be "arm64" or "x86_64"
+ARCH=$2
 
 # glibtoolize (and maybe other tools) are not supplied with OS X.
 # Add default macports & homebrew paths in attempt to find them.
@@ -8,7 +11,7 @@ export PATH=${PATH}:/opt/local/bin:/usr/local/bin
 # Copy source to a new location to build.
 cd "${SRCROOT}/.."
 mkdir -p "${OBJROOT}"
-cp -af curl "${OBJROOT}/curl-$MODE"
+cp -af curl "${OBJROOT}/curl-$ARCH"
 
 # Copy libssh2 (we depend on it) headers & dylibs.
 cd "${SRCROOT}/../SFTP"
@@ -24,15 +27,15 @@ cp -f libssl.dylib "${OBJROOT}/libssh2/Frameworks"
 
 # Copy libcares (we depend on it) headers & dylibs.
 cd "${SRCROOT}"
-mkdir -p "${OBJROOT}/c-ares-$MODE/include"
-mkdir -p "${OBJROOT}/c-ares-$MODE/lib"
-cp -f ../c-ares/ares*.h "${OBJROOT}/c-ares-$MODE/include"
+mkdir -p "${OBJROOT}/c-ares-$ARCH/include"
+mkdir -p "${OBJROOT}/c-ares-$ARCH/lib"
+cp -f ../c-ares/ares*.h "${OBJROOT}/c-ares-$ARCH/include"
 # Overwrite generic ares_build.h with the one from our actual build.
-cp -f built/include/cares-$MODE/ares_build.h "${OBJROOT}/c-ares-$MODE/include/ares_build.h"
-cp -f built/libcares.dylib "${OBJROOT}/c-ares-$MODE/lib"
+cp -f built/include/cares-$ARCH/ares_build.h "${OBJROOT}/c-ares-$ARCH/include/ares_build.h"
+cp -f built/libcares.dylib "${OBJROOT}/c-ares-$ARCH/lib"
 
 # Buildconf
-cd "${OBJROOT}/curl-$MODE"
+cd "${OBJROOT}/curl-$ARCH"
 echo "Please ignore any messages about \"No rule to make target distclean.\" That just means the build dir is already clean."
 make distclean
 echo "***"
@@ -45,13 +48,13 @@ echo "***"
 # Configure
 ./configure \
 CC="clang" \
-CFLAGS="-isysroot ${SDKROOT} -arch $MODE -g -w -mmacosx-version-min=10.6" \
-CPPFLAGS="-DMAC_OS_X_VERSION_MIN_REQUIRED=1060 -DMAC_OS_X_VERSION_MAX_ALLOWED=1060" \
+CFLAGS="-isysroot ${SDKROOT} -arch $ARCH -g -w -mmacosx-version-min=10.13" \
+CPPFLAGS="-DMAC_OS_X_VERSION_MIN_REQUIRED=1090" \
 --host=$MODE-apple-darwin10 \
 --with-sysroot="${SDKROOT}" \
 --with-darwinssl \
 --with-libssh2="${OBJROOT}/libssh2" \
---enable-ares="${OBJROOT}/c-ares-$MODE" \
+--enable-ares="${OBJROOT}/c-ares-$ARCH" \
 --without-libidn \
 --enable-debug \
 --enable-optimize \

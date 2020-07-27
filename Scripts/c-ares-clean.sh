@@ -9,7 +9,7 @@ make distclean
 
 # Remove final output files from previous run.
 OUTDIR="${SRCROOT}/built"
-rm -Rf "${OUTDIR}/include/cares-i386"
+rm -Rf "${OUTDIR}/include/cares-arm64"
 rm -Rf "${OUTDIR}/include/cares-x86_64"
 rm -f  "${OUTDIR}/libcares.dylib"
 rm -Rf "${OUTDIR}/libcares.dylib.dSYM"
@@ -20,5 +20,5 @@ rm -f  "${OBJROOT}/libcares.dylib"
 rm -Rf "${OBJROOT}/libcares.dylib.dSYM"
 
 # Remove build dirs from previous run.
-rm -Rf "${OBJROOT}/cares-i386"
+rm -Rf "${OBJROOT}/cares-arm64"
 rm -Rf "${OBJROOT}/cares-x86_64"

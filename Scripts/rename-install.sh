@@ -1,5 +1,5 @@
-# First parameter should be "i386" or "x86_64"
-MODE=$1
+# First parameter should be "arm64" or "x86_64"
+ARCH=$1
 
 # Second parameter should be the lib name, eg "curl" or "cares"
 NAME=$2
@@ -12,7 +12,7 @@ LIBSLOC=$3
 export PATH=${PATH}:/opt/local/bin:/usr/local/bin
 
 # Correct the load commands of the dylibs.
-cd "${OBJROOT}/$NAME-$MODE/$LIBSLOC"
+cd "${OBJROOT}/$NAME-$ARCH/$LIBSLOC"
 
 # Get the full filenames of the dylibs from the symlinks.
 # E.g.: dylib:"libcrypto.1.0.0.dylib" symlink:"libcrypto.dylib"
@@ -27,4 +27,4 @@ install_name_tool -id @rpath/lib$NAME.dylib ${LONG_DYLIB}
 install_name_tool -add_rpath @loader_path/../Frameworks ${LONG_DYLIB}
 
 # Copy dylibs to have arch in name.
-cp -f ${LONG_DYLIB} lib$NAME-$MODE.dylib
+cp -f ${LONG_DYLIB} lib$NAME-$ARCH.dylib

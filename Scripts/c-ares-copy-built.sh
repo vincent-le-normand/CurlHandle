@@ -1,4 +1,4 @@
-# First parameter should be "i386" or "x86_64"
+# First parameter should be "arm64" or "x86_64"
 MODE=$1
 
 # Copy ares_build.h for use by libcurl compile.
