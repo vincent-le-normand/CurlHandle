@@ -18,17 +18,6 @@
 			name = "libcurl-tests-x86_64";
 			productName = libcurl;
 		};
-		8008030A16696287004D39F5 /* libcurl-i386 */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 8008030B16696287004D39F5 /* Build configuration list for PBXAggregateTarget "libcurl-i386" */;
-			buildPhases = (
-				800803191669665D004D39F5 /* Run Script - Configure + make */,
-			);
-			dependencies = (
-			);
-			name = "libcurl-i386";
-			productName = "libcurl-i386";
-		};
 		8008030E16696292004D39F5 /* libcurl-x86_64 */ = {
 			isa = PBXAggregateTarget;
 			buildConfigurationList = 8008030F16696292004D39F5 /* Build configuration list for PBXAggregateTarget "libcurl-x86_64" */;
@@ -48,7 +37,7 @@
 			);
 			dependencies = (
 				80080330166A9557004D39F5 /* PBXTargetDependency */,
-				80080332166A9557004D39F5 /* PBXTargetDependency */,
+				EE4E840C24C126EC00324D23 /* PBXTargetDependency */,
 				80080334166A9557004D39F5 /* PBXTargetDependency */,
 			);
 			name = libcares;
@@ -64,17 +53,6 @@
 			);
 			name = "libcares-clean";
 			productName = "libcares-clean";
-		};
-		80080327166A952A004D39F5 /* libcares-i386 */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 80080328166A952A004D39F5 /* Build configuration list for PBXAggregateTarget "libcares-i386" */;
-			buildPhases = (
-				80080339166A966D004D39F5 /* Run Script - Configure + make */,
-			);
-			dependencies = (
-			);
-			name = "libcares-i386";
-			productName = "libcares-i386";
 		};
 		8008032B166A9535004D39F5 /* libcares-x86_64 */ = {
 			isa = PBXAggregateTarget;
@@ -96,7 +74,7 @@
 			dependencies = (
 				80080336166A9569004D39F5 /* PBXTargetDependency */,
 				809AE1C51602BF8A001D02E1 /* PBXTargetDependency */,
-				80080313166962A7004D39F5 /* PBXTargetDependency */,
+				EE4E840A24C126E100324D23 /* PBXTargetDependency */,
 				80080315166962A7004D39F5 /* PBXTargetDependency */,
 			);
 			name = libcurl;
@@ -112,6 +90,28 @@
 			);
 			name = "libcurl-clean";
 			productName = "libcurl-clean";
+		};
+		EE4E83FF24C1268500324D23 /* libcurl-arm64 */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = EE4E840124C1268500324D23 /* Build configuration list for PBXAggregateTarget "libcurl-arm64" */;
+			buildPhases = (
+				EE4E840024C1268500324D23 /* Run Script - Configure + make */,
+			);
+			dependencies = (
+			);
+			name = "libcurl-arm64";
+			productName = "libcurl-x86_64";
+		};
+		EE4E840424C1269700324D23 /* libcares-arm64 */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = EE4E840624C1269700324D23 /* Build configuration list for PBXAggregateTarget "libcares-arm64" */;
+			buildPhases = (
+				EE4E840524C1269700324D23 /* Run Script - Configure + make */,
+			);
+			dependencies = (
+			);
+			name = "libcares-arm64";
+			productName = "libcares-x86_64";
 		};
 /* End PBXAggregateTarget section */
 
@@ -205,13 +205,6 @@
 			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = CURLHandle;
 		};
-		80080312166962A7004D39F5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8008030A16696287004D39F5;
-			remoteInfo = "libcurl-i386";
-		};
 		80080314166962A7004D39F5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
@@ -225,13 +218,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 80080323166A951E004D39F5;
 			remoteInfo = "libcares-clean";
-		};
-		80080331166A9557004D39F5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 80080327166A952A004D39F5;
-			remoteInfo = "libcares-i386";
 		};
 		80080333166A9557004D39F5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -253,6 +239,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 809AE1BF1602BEF1001D02E1;
 			remoteInfo = "libcurl-clean";
+		};
+		EE4E840924C126E100324D23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EE4E83FF24C1268500324D23;
+			remoteInfo = "libcurl-arm64";
+		};
+		EE4E840B24C126EC00324D23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EE4E840424C1269700324D23;
+			remoteInfo = "libcares-arm64";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -467,7 +467,7 @@
 				220C11A41716067E0086F199 /* Documentation */,
 				2298FF5D1716C6F30001EBC7 /* Scripts */,
 				034768DFFF38A50411DB9C8B /* Products */,
-				BF7DFCBB1FA8AC7100E2DD69 /* Recovered References */,
+				EEA1870524AF9D2900695344 /* Recovered References */,
 			);
 			name = CURLHandle;
 			sourceTree = "<group>";
@@ -669,7 +669,7 @@
 			name = Libraries;
 			sourceTree = "<group>";
 		};
-		BF7DFCBB1FA8AC7100E2DD69 /* Recovered References */ = {
+		EEA1870524AF9D2900695344 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
 				50ED7E2716EED8D000723020 /* CoreServices.framework */,
@@ -768,54 +768,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastTestingUpgradeCheck = 0600;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Karelia Software";
-				TargetAttributes = {
-					223FD091160B523700BE1C80 = {
-						ProvisioningStyle = Manual;
-					};
-					227FCE591741462200C3029D = {
-						ProvisioningStyle = Manual;
-					};
-					22C9CFBE17035A0A004610FE = {
-						ProvisioningStyle = Manual;
-					};
-					8008030A16696287004D39F5 = {
-						ProvisioningStyle = Manual;
-					};
-					8008030E16696292004D39F5 = {
-						ProvisioningStyle = Manual;
-					};
-					8008031F166A9514004D39F5 = {
-						ProvisioningStyle = Manual;
-					};
-					80080323166A951E004D39F5 = {
-						ProvisioningStyle = Manual;
-					};
-					80080327166A952A004D39F5 = {
-						ProvisioningStyle = Manual;
-					};
-					8008032B166A9535004D39F5 = {
-						ProvisioningStyle = Manual;
-					};
-					809ADE7816029C38001D02E1 = {
-						ProvisioningStyle = Manual;
-					};
-					809AE1BF1602BEF1001D02E1 = {
-						ProvisioningStyle = Manual;
-					};
-					8DC2EF4F0486A6940098B216 = {
-						ProvisioningStyle = Manual;
-					};
-				};
 			};
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "CURLHandle" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = en;
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
+				English,
 				en,
-				Base,
 			);
 			mainGroup = 0867D691FE84028FC02AAC07 /* CURLHandle */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
@@ -827,12 +789,12 @@
 				809ADE7816029C38001D02E1 /* libcurl */,
 				227FCE591741462200C3029D /* libcurl-tests-x86_64 */,
 				809AE1BF1602BEF1001D02E1 /* libcurl-clean */,
-				8008030A16696287004D39F5 /* libcurl-i386 */,
 				8008030E16696292004D39F5 /* libcurl-x86_64 */,
+				EE4E83FF24C1268500324D23 /* libcurl-arm64 */,
 				8008031F166A9514004D39F5 /* libcares */,
 				80080323166A951E004D39F5 /* libcares-clean */,
-				80080327166A952A004D39F5 /* libcares-i386 */,
 				8008032B166A9535004D39F5 /* libcares-x86_64 */,
+				EE4E840424C1269700324D23 /* libcares-arm64 */,
 				22C9CFBE17035A0A004610FE /* Standalone Test */,
 			);
 		};
@@ -891,21 +853,6 @@
 			shellScript = "echo Copying libraries\ncp \"${OBJROOT}/c-ares-x86_64/lib/libcares.dylib\" \"${OBJROOT}/curl-x86_64/lib/.libs\"\ncp \"${SRCROOT}/../SFTP/libcrypto.dylib\" \"${OBJROOT}/curl-x86_64/lib/.libs\"\ncp \"${SRCROOT}/../SFTP/libssh2.dylib\" \"${OBJROOT}/curl-x86_64/lib/.libs\"\ncp \"${SRCROOT}/../SFTP/libssl.dylib\" \"${OBJROOT}/curl-x86_64/lib/.libs\"\n\necho Running tests\ncp ../Scripts/setup \"${OBJROOT}/curl-x86_64\"\ncd \"${OBJROOT}/curl-x86_64\"\nmake test\necho Finished tests\n";
 			showEnvVarsInLog = 0;
 		};
-		800803191669665D004D39F5 /* Run Script - Configure + make */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Run Script - Configure + make";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/bash;
-			shellScript = "../Scripts/curl-config.sh \"i386\"\n../Scripts/curl-make.sh \"i386\"\n../Scripts/rename-install.sh \"i386\" \"curl\" \"lib/.libs\"";
-			showEnvVarsInLog = 0;
-		};
 		8008031B16696675004D39F5 /* Run Script - Configure + make */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -918,7 +865,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "../Scripts/curl-config.sh \"x86_64\"\n../Scripts/curl-make.sh \"x86_64\"\n../Scripts/rename-install.sh \"x86_64\" \"curl\" \"lib/.libs\"";
+			shellScript = "../Scripts/curl-config.sh \"x86_64\" \"x86_64\"\n../Scripts/curl-make.sh \"x86_64\"\n../Scripts/rename-install.sh \"x86_64\" \"curl\" \"lib/.libs\"\n";
 			showEnvVarsInLog = 0;
 		};
 		80080337166A9651004D39F5 /* Run Script - lipo multi-arch dylib */ = {
@@ -932,12 +879,12 @@
 			outputPaths = (
 				"${SRCROOT}/built/libcares.dylib",
 				"${SRCROOT}/built/libcares.dylib.dSYM",
-				"${SRCROOT}/built/include/cares-i386/ares_build.h",
+				"${SRCROOT}/built/include/cares-arm64/ares_build.h",
 				"${SRCROOT}/built/include/cares-x86_64/ares_build.h",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "../Scripts/c-ares-combine.sh";
+			shellScript = "../Scripts/c-ares-combine.sh\n";
 			showEnvVarsInLog = 0;
 		};
 		80080338166A9661004D39F5 /* Run Script - remove previous product dylibs */ = {
@@ -952,22 +899,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "../Scripts/c-ares-clean.sh";
-			showEnvVarsInLog = 0;
-		};
-		80080339166A966D004D39F5 /* Run Script - Configure + make */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Run Script - Configure + make";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/bash;
-			shellScript = "../Scripts/c-ares-config.sh \"i386\"\n../Scripts/c-ares-make.sh \"i386\"\n../Scripts/rename-install.sh \"i386\" \"cares\" \".libs\"\n";
+			shellScript = "../Scripts/c-ares-clean.sh\n";
 			showEnvVarsInLog = 0;
 		};
 		8008033B166A9682004D39F5 /* Run Script - Configure + make */ = {
@@ -982,7 +914,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "../Scripts/c-ares-config.sh \"x86_64\"\n../Scripts/c-ares-make.sh \"x86_64\"\n../Scripts/rename-install.sh \"x86_64\" \"cares\" \".libs\"\n";
+			shellScript = "../Scripts/c-ares-config.sh \"x86_64\" \"x86_64\"\n../Scripts/c-ares-make.sh \"x86_64\"\n../Scripts/rename-install.sh \"x86_64\" \"cares\" \".libs\"\n";
 			showEnvVarsInLog = 0;
 		};
 		809AE1BC1602BE6C001D02E1 /* Run Script - lipo multi-arch dylib */ = {
@@ -996,7 +928,7 @@
 			outputPaths = (
 				"${SRCROOT}/built/libcurl.dylib",
 				"${SRCROOT}/built/libcurl.dylib.dSYM",
-				"${SRCROOT}/built/include/curl-i386",
+				"${SRCROOT}/built/include/curl-arm64",
 				"${SRCROOT}/built/include/curl-x86_64",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1016,7 +948,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "../Scripts/curl-clean.sh";
+			shellScript = "../Scripts/curl-clean.sh\n";
+			showEnvVarsInLog = 0;
+		};
+		EE4E840024C1268500324D23 /* Run Script - Configure + make */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script - Configure + make";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "../Scripts/curl-config.sh \"arm\" \"arm64\"\n../Scripts/curl-make.sh \"arm64\"\n../Scripts/rename-install.sh \"arm64\" \"curl\" \"lib/.libs\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE4E840524C1269700324D23 /* Run Script - Configure + make */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script - Configure + make";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "../Scripts/c-ares-config.sh \"arm\" \"arm64\"\n../Scripts/c-ares-make.sh \"arm64\"\n../Scripts/rename-install.sh \"arm64\" \"cares\" \".libs\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1084,11 +1046,6 @@
 			target = 8DC2EF4F0486A6940098B216 /* CURLHandle */;
 			targetProxy = 22BCCE2B16ADD57700DFFE8D /* PBXContainerItemProxy */;
 		};
-		80080313166962A7004D39F5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8008030A16696287004D39F5 /* libcurl-i386 */;
-			targetProxy = 80080312166962A7004D39F5 /* PBXContainerItemProxy */;
-		};
 		80080315166962A7004D39F5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8008030E16696292004D39F5 /* libcurl-x86_64 */;
@@ -1098,11 +1055,6 @@
 			isa = PBXTargetDependency;
 			target = 80080323166A951E004D39F5 /* libcares-clean */;
 			targetProxy = 8008032F166A9557004D39F5 /* PBXContainerItemProxy */;
-		};
-		80080332166A9557004D39F5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 80080327166A952A004D39F5 /* libcares-i386 */;
-			targetProxy = 80080331166A9557004D39F5 /* PBXContainerItemProxy */;
 		};
 		80080334166A9557004D39F5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1118,6 +1070,16 @@
 			isa = PBXTargetDependency;
 			target = 809AE1BF1602BEF1001D02E1 /* libcurl-clean */;
 			targetProxy = 809AE1C41602BF8A001D02E1 /* PBXContainerItemProxy */;
+		};
+		EE4E840A24C126E100324D23 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EE4E83FF24C1268500324D23 /* libcurl-arm64 */;
+			targetProxy = EE4E840924C126E100324D23 /* PBXContainerItemProxy */;
+		};
+		EE4E840C24C126EC00324D23 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EE4E840424C1269700324D23 /* libcares-arm64 */;
+			targetProxy = EE4E840B24C126EC00324D23 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1180,10 +1142,9 @@
 		1DEB91B208733DA50010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application: INTEGO (TCG22P5KE4)";
-				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1200,15 +1161,11 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"-Xlinker",
-					"-U",
-					"-Xlinker",
-					_objc_readClassPair,
-				);
 				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = macosx;
+				VALID_ARCHS = "x86_64 arm64";
 				WARNING_CFLAGS = "-Wdocumentation";
 			};
 			name = Debug;
@@ -1216,10 +1173,9 @@
 		1DEB91B308733DA50010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application: INTEGO (TCG22P5KE4)";
-				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
@@ -1229,14 +1185,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				OTHER_LDFLAGS = (
-					"-Xlinker",
-					"-U",
-					"-Xlinker",
-					_objc_readClassPair,
-				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = macosx;
+				VALID_ARCHS = "x86_64 arm64";
 				WARNING_CFLAGS = "-Wdocumentation";
 			};
 			name = Release;
@@ -1337,31 +1289,10 @@
 			};
 			name = Release;
 		};
-		8008030C16696287004D39F5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				COMBINE_HIDPI_IMAGES = YES;
-				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				VALID_ARCHS = i386;
-			};
-			name = Debug;
-		};
-		8008030D16696287004D39F5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				COMBINE_HIDPI_IMAGES = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				VALID_ARCHS = i386;
-			};
-			name = Release;
-		};
 		8008031016696292004D39F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				COMBINE_HIDPI_IMAGES = YES;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1372,7 +1303,7 @@
 		8008031116696292004D39F5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				COMBINE_HIDPI_IMAGES = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = x86_64;
@@ -1411,28 +1342,6 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		80080329166A952A004D39F5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				COMBINE_HIDPI_IMAGES = YES;
-				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				VALID_ARCHS = i386;
-			};
-			name = Debug;
-		};
-		8008032A166A952A004D39F5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				COMBINE_HIDPI_IMAGES = YES;
-				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				VALID_ARCHS = i386;
 			};
 			name = Release;
 		};
@@ -1492,6 +1401,49 @@
 			};
 			name = Release;
 		};
+		EE4E840224C1268500324D23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				COMBINE_HIDPI_IMAGES = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = x86_64;
+			};
+			name = Debug;
+		};
+		EE4E840324C1268500324D23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				COMBINE_HIDPI_IMAGES = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = x86_64;
+			};
+			name = Release;
+		};
+		EE4E840724C1269700324D23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = x86_64;
+			};
+			name = Debug;
+		};
+		EE4E840824C1269700324D23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = x86_64;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1540,15 +1492,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8008030B16696287004D39F5 /* Build configuration list for PBXAggregateTarget "libcurl-i386" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8008030C16696287004D39F5 /* Debug */,
-				8008030D16696287004D39F5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		8008030F16696292004D39F5 /* Build configuration list for PBXAggregateTarget "libcurl-x86_64" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1576,15 +1519,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		80080328166A952A004D39F5 /* Build configuration list for PBXAggregateTarget "libcares-i386" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				80080329166A952A004D39F5 /* Debug */,
-				8008032A166A952A004D39F5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		8008032C166A9535004D39F5 /* Build configuration list for PBXAggregateTarget "libcares-x86_64" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1608,6 +1542,24 @@
 			buildConfigurations = (
 				809AE1C11602BEF1001D02E1 /* Debug */,
 				809AE1C21602BEF1001D02E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE4E840124C1268500324D23 /* Build configuration list for PBXAggregateTarget "libcurl-arm64" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE4E840224C1268500324D23 /* Debug */,
+				EE4E840324C1268500324D23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE4E840624C1269700324D23 /* Build configuration list for PBXAggregateTarget "libcares-arm64" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE4E840724C1269700324D23 /* Debug */,
+				EE4E840824C1269700324D23 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
