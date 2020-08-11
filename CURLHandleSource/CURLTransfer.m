@@ -758,7 +758,7 @@ static int curlKnownHostsFunction(CURL *easy,     /* easy handle */
     long responseCode;
     if (curl_easy_getinfo(_handle, CURLINFO_RESPONSE_CODE, &responseCode) == CURLE_OK && responseCode)
     {
-        [userInfo setObject:[NSNumber numberWithLong:responseCode] forKey:@(CURLINFO_RESPONSE_CODE)];
+        [userInfo setObject:[NSNumber numberWithLong:responseCode] forKey:@(CURLINFO_RESPONSE_CODE).stringValue];
     }
     
     long osErrorNumber = 0;
@@ -1217,7 +1217,7 @@ int curlKnownHostsFunction(CURL *easy,     /* easy handle */
 
 - (NSUInteger)curlResponseCode
 {
-    NSInteger result = [[[self userInfo] objectForKey:@(CURLINFO_RESPONSE_CODE)] integerValue];
+    NSInteger result = [[[self userInfo] objectForKey:@(CURLINFO_RESPONSE_CODE).stringValue] integerValue];
 
     return result;
 }
