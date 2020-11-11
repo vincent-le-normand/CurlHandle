@@ -48,7 +48,7 @@ echo "***"
 # Configure
 ./configure \
 CC="clang" \
-CFLAGS="-isysroot ${SDKROOT} -arch $ARCH -g -w -mmacosx-version-min=10.13" \
+CFLAGS="-isysroot ${SDKROOT} -arch $ARCH -g -w -mmacosx-version-min=10.9" \
 CPPFLAGS="-DMAC_OS_X_VERSION_MIN_REQUIRED=1090" \
 --host=$MODE-apple-darwin10 \
 --with-sysroot="${SDKROOT}" \

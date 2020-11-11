@@ -614,7 +614,7 @@ static int curlKnownHostsFunction(CURL *easy,     /* easy handle */
             _state = state;
             
             NSAssert(_error == nil, @"Error shouldn't have been filled in yet");
-            _error = [error retain];
+            _error = error;
             
             switch (state) {
                 case CURLTransferStateSuspended:
@@ -758,7 +758,7 @@ static int curlKnownHostsFunction(CURL *easy,     /* easy handle */
     long responseCode;
     if (curl_easy_getinfo(_handle, CURLINFO_RESPONSE_CODE, &responseCode) == CURLE_OK && responseCode)
     {
-        [userInfo setObject:[NSNumber numberWithLong:responseCode] forKey:[@(CURLINFO_RESPONSE_CODE) description]];
+        [userInfo setObject:[NSNumber numberWithLong:responseCode] forKey:@(CURLINFO_RESPONSE_CODE).stringValue];
     }
     
     long osErrorNumber = 0;
@@ -775,7 +775,6 @@ static int curlKnownHostsFunction(CURL *easy,     /* easy handle */
     if (code == CURLE_PEER_FAILED_VERIFICATION ||   // seen on 10.7
         code == CURLE_SSL_CACERT)                   // seen on 10.9
     {
-#if 1
         // Use Keith's patch to grab SecTrust. Have to hardcode the value for now
         // until I figure out the build search paths properly
         SecTrustRef trust;
@@ -789,28 +788,6 @@ static int curlKnownHostsFunction(CURL *easy,     /* easy handle */
             [userInfo release];
             return result;
         }
-#else
-        // Saved up code for when we use libcurl version 7.54.1 or later
-        struct curl_tlssessioninfo *tls = NULL;
-        
-        if (curl_easy_getinfo(_handle, CURLINFO_TLS_SESSION, &tls) == CURLE_OK && tls)
-        {
-            // TODO: returned ctx is NULL and as a result we can't get the trust. Figure out why.
-            SSLContextRef ctx = (SSLContextRef)(tls->internals);
-            
-            SecTrustRef trust = NULL;
-            if (errSecSuccess == SSLCopyPeerTrust(ctx, &trust))
-            {
-                NSMutableDictionary *userInfo = [[NSMutableDictionary alloc] initWithDictionary:result.userInfo];
-                [userInfo setObject:result forKey:NSUnderlyingErrorKey];
-                [userInfo setObject:(id)trust forKey:NSURLErrorFailingURLPeerTrustErrorKey];
-                
-                result = [NSError errorWithDomain:NSURLErrorDomain code:NSURLErrorSecureConnectionFailed userInfo:userInfo];
-                [userInfo release];
-                return result;
-            }
-        }
-#endif
         
         struct curl_certinfo *certInfo = NULL;
         if (curl_easy_getinfo(_handle, CURLINFO_CERTINFO, &certInfo) == CURLE_OK)
@@ -1240,7 +1217,7 @@ int curlKnownHostsFunction(CURL *easy,     /* easy handle */
 
 - (NSUInteger)curlResponseCode
 {
-    NSInteger result = [[[self userInfo] objectForKey:[@(CURLINFO_RESPONSE_CODE) description]] integerValue];
+    NSInteger result = [[[self userInfo] objectForKey:@(CURLINFO_RESPONSE_CODE).stringValue] integerValue];
 
     return result;
 }
